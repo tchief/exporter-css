@@ -1,6 +1,6 @@
 {
-  "id": "io.supernova.css",
-  "name": "CSS",
+  "id": "io.supernova.css.test",
+  "name": "CSS-test",
   "description": "CSS token and style exporter",
   "author": "Ivan Terpugov & Jiri Trecak",
   "organization": "Supernova",
@@ -17,5 +17,9 @@
     "pulsar": "1.0.0",
     "supernova": "1.0.0"
   },
-  "tags": ["CSS", "Tokens", "Styles"]
+  "tags": [
+    "CSS",
+    "Tokens",
+    "Styles"
+  ]
 }
