@@ -37,8 +37,10 @@ Pulsar.registerFunction(
 
 function findAliases(token, allTokens) {
   let aliases = allTokens.filter(
-    (t) => t.value.referencedToken && t.value.referencedToken.id === token.id
+    (t) => (t.value.referencedToken && t.value.referencedToken.id === token.id) ||
+      (t.origin?.referencePersistentId && t.origin?.referencePersistentId === token.id)
   );
+  if (aliases.length) console.log(`Some aliases for '${token.name}': '${aliases.map(a => a.name).join()}'`);
   for (const t of aliases) {
     aliases = aliases.concat(findAliases(t, allTokens));
   }

@@ -17,6 +17,10 @@
             "write_to": "measures.css"
         },
         {
+            "invoke": "measures-origin.pr",
+            "write_to": "measures-origin.css"
+        },
+        {
             "invoke": "shadows.pr",
             "write_to": "shadows.css"
         },
