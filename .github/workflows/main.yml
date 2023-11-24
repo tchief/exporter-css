@@ -17,6 +17,6 @@ jobs:
           uri: 'https://cli-release.s3.eu-west-1.amazonaws.com/channels/stable/supernova-linux-x64.tar.gz'
           name: 'supernova'
           version: '1.0.0'
-          command: supernova --version
+          command: ./bin/supernova --version
       - run: echo "🍏 This job's status is ${{ job.status }}."
 
