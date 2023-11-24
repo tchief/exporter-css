@@ -14,7 +14,7 @@ jobs:
           cache: enable
       - uses: supplypike/setup-bin@v3
         with:
-          uri: 'https://awscli.amazonaws.com/awscli-exe-linux-x86_64-2.0.30.zip'
+          uri: 'https://cli-release.s3.eu-west-1.amazonaws.com/channels/stable/supernova-linux-x64.tar.gz'
           name: 'supernova'
           command: supernova --version
       - run: echo "🍏 This job's status is ${{ job.status }}."
