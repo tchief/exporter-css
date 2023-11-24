@@ -12,12 +12,10 @@ jobs:
           repo: go-task/task
           # tag: v0.7.0
           cache: enable
-      - run: echo "🍏 This job's status is ${{ job.status }}."
-      - name: Test downloading external binary
-        uses: giantswarm/install-binary-action@VERSION
+      - uses: supplypike/setup-bin@v3
         with:
-          binary: "semver"
-          version: "3.0.0"
-          download_url: "https://cli-release.s3.eu-west-1.amazonaws.com/channels/stable/supernova-linux-x64.tar.gz"
-          tarball_binary_path: "*/src/${binary}"
-          smoke_test: "${binary} --version"
+          uri: 'https://awscli.amazonaws.com/awscli-exe-linux-x86_64-2.0.30.zip'
+          name: 'supernova'
+          command: supernova --version
+      - run: echo "🍏 This job's status is ${{ job.status }}."
+
