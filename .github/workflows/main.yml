@@ -6,12 +6,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-      - name: Install go-task
-        uses: jaxxstorm/action-install-gh-release@v1.10.0
-        with: # Grab the latest version
-          repo: go-task/task
-          # tag: v0.7.0
-          cache: enable
+      # - name: Install go-task
+      #   uses: jaxxstorm/action-install-gh-release@v1.10.0
+      #   with: # Grab the latest version
+      #     repo: go-task/task
+      #     # tag: v0.7.0
+      #     cache: enable
       - uses: supplypike/setup-bin@v3
         with:
           uri: 'https://cli-release.s3.eu-west-1.amazonaws.com/channels/stable/supernova-linux-x64.tar.gz'
