@@ -12,6 +12,7 @@ jobs:
       #     repo: go-task/task
       #     # tag: v0.7.0
       #     cache: enable
+      - uses: actions/checkout@v3
       - uses: supplypike/setup-bin@v3
         with:
           uri: 'https://cli-release.s3.eu-west-1.amazonaws.com/channels/stable/supernova-linux-x64.tar.gz'
@@ -21,6 +22,11 @@ jobs:
           #command: ./supernova/bin/supernova --version
       - run: supernova --version
       - run: ls -R
-      - run: supernova sync-tokens --apiKey=${{secrets.SN_API_KEY_2}} --designSystemId=105384 --tokenFilePath=./test-resources/tokens/tokens.json --configFilePath=./test-resources/tokens/supernova.settings.json
+      - run: >
+          supernova sync-tokens 
+          --apiKey="${{ secrets.SN_API_KEY_2 }}"
+          --designSystemId="105384" 
+          --tokenFilePath "${{ github.workspace }}/test-resources/tokens/tokens.json" 
+          --configFilePath "${{ github.workspace }}/test-resources/tokens/supernova.settings.json"
       - run: echo "🍏 This job's status is ${{ job.status }}."
 
