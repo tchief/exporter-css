@@ -20,5 +20,6 @@ jobs:
           subPath: ./supernova/bin/
           #command: ./supernova/bin/supernova --version
       - run: supernova --version
+      - run: supernova sync-tokens --apiKey=${{secrets.SN_API_KEY}} --designSystemId=105384 --tokenFilePath=test-resources/tokens/tokens.json --configFilePath=test-resources/tokens/supernova.settings.json
       - run: echo "🍏 This job's status is ${{ job.status }}."
 
